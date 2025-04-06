@@ -44,6 +44,7 @@ print(f"Después de pop: {numeros}")
 
 # Contar y buscar en listas
 lista_con_duplicados = [1, 2, 3, 2, 4, 2, 5]
+print(f"Lista con duplicados: {lista_con_duplicados}")
 conteo = lista_con_duplicados.count(2)  # Cuenta ocurrencias de un valor
 posicion = lista_con_duplicados.index(3)  # Encuentra la posición de un valor
 print(f"El número 2 aparece {conteo} veces")
