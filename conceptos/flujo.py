@@ -73,8 +73,17 @@ for indice, nombre in enumerate(nombres):
 # Bucle for con diccionarios
 estudiante = {"nombre": "María", "edad": 22, "carrera": "Ciencia de Datos"}
 print("\nIterando sobre un diccionario:")
-for clave in estudiante:
-    print(f"{clave}: {estudiante[clave]}")
+for i in estudiante:
+    print(f"{i}: {estudiante[i]}")
+
+# Iterar sobre una tupla
+mi_tupla = ("manzana", "banana", "cereza")
+
+for fruta in mi_tupla:
+    print(fruta)
+for i, fruta in enumerate(mi_tupla):
+    print(f"{i}: {fruta}")
+
 
 # Mejor forma de iterar sobre diccionarios
 print("\nIterando con .items():")
@@ -112,6 +121,17 @@ for i in range(3):
 numeros = [1, 2, 3, 4, 5]
 cuadrados = [x**2 for x in numeros]
 print(f"\nCuadrados mediante comprensión de listas: {cuadrados}")
+
+lista1 = [1, 2, 3]
+lista2 = [4, 5, 6]
+
+# Usamos zip para sumar elemento a elemento
+suma = [a + b for a, b in zip(lista1, lista2)]
+print(zip(lista1, lista2))
+print(list(zip(lista1, lista2)))  # Resultado: [(1, 4), (2, 5), (3, 6)]
+# Sumar elemento a elemento
+print(suma)  # Resultado: [5, 7, 9]
+
 
 # Con condición
 pares = [x for x in range(10) if x % 2 == 0]
