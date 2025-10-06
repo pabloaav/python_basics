@@ -207,3 +207,5 @@ lista_con_duplicados = [1, 2, 2, 3, 3, 3, 4, 5, 5]
 lista_sin_duplicados = list(set(lista_con_duplicados))
 print(f"Lista original: {lista_con_duplicados}")
 print(f"Lista sin duplicados: {lista_sin_duplicados}")
+
+#frozenset (set inmutable)
