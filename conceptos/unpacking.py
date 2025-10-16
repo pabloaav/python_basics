@@ -19,8 +19,6 @@ for numero, nombre in pares:
 # 2️⃣ UNPACKING EN LLAMADAS A FUNCIONES
 # ============================================================
 
-# Unpacking de lista como argumentos posicionales
-
 
 def suma(a, b, c):
     return a + b + c
