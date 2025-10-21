@@ -3,10 +3,15 @@ from typing import Optional
 
 class Pokemon:
     def __init__(self, nombre: str, nivel: int, salud: float):
-        self.nombre = nombre
-        self.__nivel = nivel
-        self.__salud = salud
-        self.__esta_vivo = True
+        self.__nombre = nombre  # nombre es inmutable una vez creado el Pokemon
+        self.__esta_vivo = True  # inicializar antes de salud ya que salud lo modifica
+        self.nivel = nivel      # usa el setter
+        self.salud = salud     # usa el setter
+
+    @property
+    def nombre(self) -> str:
+        """Obtiene el nombre del Pokémon"""
+        return self.__nombre
 
     @property
     def nivel(self) -> int:

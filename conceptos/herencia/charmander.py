@@ -6,12 +6,20 @@ class Charmander(Pokemon):
 
     def __init__(self, nombre: str, nivel: int, salud: float, temperatura: float):
         super().__init__(nombre, nivel, salud)
-        self.__temperatura = temperatura
+        self.temperatura = temperatura  # usa el setter
 
     @property
     def temperatura(self) -> float:
         """Obtiene la temperatura de Charmander"""
         return self.__temperatura
+
+    @temperatura.setter
+    def temperatura(self, temperatura: float):
+        """Establece la temperatura de Charmander"""
+        if temperatura >= 0:
+            self.__temperatura = temperatura
+        else:
+            print("❌ La temperatura no puede ser negativa")
 
     def lanzallamas(self, objetivo=None):
         """Ataque especial de tipo fuego"""
