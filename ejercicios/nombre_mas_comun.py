@@ -9,7 +9,8 @@ cuenta_nombres = {}
 # Recorremos la lista de nombres
 for nombre in nombres:
     # Si el nombre no está ya contado, lo contamos usando .count()
-    if not cuenta_nombres.get(nombre):
+    nombre_esta = cuenta_nombres.get(nombre)
+    if not nombre_esta:
         cuenta_nombres[nombre] = nombres.count(nombre)
 
 # Mostramos el diccionario con los conteos
@@ -32,3 +33,26 @@ print(max(cuenta_nombres, key=cuenta_nombres.get))
 
 5. Luego usamos `max(cuenta_nombres, key=cuenta_nombres.get)` para encontrar la clave (nombre) que tenga el valor más alto (más apariciones).
     - Aquí `key=cuenta_nombres.get` le dice a `max()` que debe comparar los nombres usando el número de veces que aparecen. """
+
+# otro ejemplo de solucion mas entendible
+
+
+def nombre_mas_repetido(lista_nombres):
+    cuenta_nombres = {}  # Diccionario para contar cada nombre
+
+    # Contamos cuántas veces aparece cada nombre
+    for nombre in lista_nombres:
+        if nombre in cuenta_nombres:
+            cuenta_nombres[nombre] += 1
+        else:
+            cuenta_nombres[nombre] = 1
+
+    # Buscamos la clave (nombre) con el valor más alto
+    mas_repetido = max(cuenta_nombres, key=cuenta_nombres.get)
+
+    return mas_repetido
+
+
+# Ejemplo de uso
+nombres = ["Ana", "Luis", "Ana", "Pedro", "Luis", "Ana", "Carlos", "Luis"]
+print(nombre_mas_repetido(nombres))  # Ana
